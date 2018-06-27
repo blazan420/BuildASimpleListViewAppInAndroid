@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends ListActivity implements AdapterView.OnItemClickListener {
 
@@ -31,7 +32,12 @@ public class MainActivity extends ListActivity implements AdapterView.OnItemClic
     }
 
     @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        String itemValue = parent.getItemAtPosition(position).toString();
+        Toast.makeText(MainActivity.this, itemValue, Toast.LENGTH_SHORT).show();
+
+
 
     }
 }
